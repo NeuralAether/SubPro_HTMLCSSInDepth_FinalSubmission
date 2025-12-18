@@ -29,13 +29,21 @@ article {
 
 footer {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(200, 200, 200);
+    margin-top: 2rem;
+}
+
+footer div {
+    margin: 0 1rem;
 }
 
 /* Specific styles for the logo container, should be small in the middle of the page */
 .logo-container {
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
 }
 
 .logo-container img {
@@ -49,6 +57,7 @@ nav {
     background-color: white;
     padding: 1rem 0;
     margin-top: 1rem;
+    width: 100%;
 }
 
 nav ul {
@@ -66,6 +75,7 @@ nav li {
 nav a {
     color: black;
     font-size: 1.2rem;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -74,16 +84,19 @@ nav a:hover {
 
 /* Hamburger Menu Styles */
 header {
-    position: relative; /* To position the hamburger menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .hamburger {
     display: none;
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    top: 20px;
+    right: 0;
     z-index: 1001;
 }
 
@@ -130,23 +143,28 @@ header {
     border-radius: 8px;
     border: 1px solid white;
 }
+
 .s-article > img {
+    display: block;
     width: 100%;
+    max-width: 400px;
     height: auto;
     border: 1px solid black;
-    margin: 0 auto 1rem;
+    margin: 0 auto ;
     box-shadow: 1px 1px 4px black;
 }
 
 .s-article h2 {
-    margin: 0 auto 1rem;
+    margin: 1rem auto 1rem;
     font-size: 1.5rem;
     color: rgb(209, 203, 203);
     text-shadow: 1px 1px 2px black;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: underline solid;
+    justify-self: center;
 }
+
 .s-article ul {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -158,27 +176,17 @@ header {
 }
 
 /* Footer styles */
-footer {
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgb(200, 200, 200);
-    margin-top: 2rem;
-}
-
 footer .hd-footer-logo {
     width: 100%;
     max-width: 300px;
     height: auto;
-    margin-left: 40px;
-    margin-right: 20px;
+    margin: auto 20px auto 20px;
 }
 
 footer p {
     font-size: 0.9rem;
     color: rgb(220, 220, 220);
-    margin-left: 40px;
-    margin-right: 20px;
+    margin: auto 20px auto 20px;
 }
 
 /* Animating the background hair texture in the welcome banner */
@@ -195,16 +203,10 @@ footer p {
 }
 
 
-
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        left: auto;
-        transform: none;
     }
 
     .hamburger.active .bar {
@@ -261,7 +263,7 @@ footer p {
 
     .s-article > img {
         max-width: 300px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto; 
+        display: block;
     }
 }
