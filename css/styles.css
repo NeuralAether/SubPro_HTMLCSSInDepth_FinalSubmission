@@ -1,0 +1,267 @@
+/* Universal styles for the application */
+body {
+    background-color: rgb(32, 28, 27);
+    font-family: 'Baskerville', sans-serif;
+    margin: 3rem 5% 3rem 5%;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+header > img {
+    display: block;
+    margin: 1rem auto;
+}
+
+section {
+    display: flex; 
+}
+
+article {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+}
+
+/* Specific styles for the logo container, should be small in the middle of the page */
+.logo-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles for navigation links */
+nav {
+    background-color: white;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: black;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Hamburger Menu Styles */
+header {
+    position: relative; /* To position the hamburger menu */
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* Styles for welcome banner */
+.welcome-banner {
+    text-align: center;
+    margin: 0;
+    background-image: url('../assets/hair_texture.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    padding: 5rem 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    border: 2px solid white;
+    animation: moveBackground 30s ease-in-out infinite;
+}
+.welcome-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px black;
+}
+.welcome-banner p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(182, 95, 95, 0.4);
+}
+
+.s-article {
+    margin: .5rem 0 0 0;
+    padding: 1rem;
+    background-color: rgba(182, 95, 95, 0.2);
+    border-radius: 8px;
+    border: 1px solid white;
+}
+.s-article > img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    margin: 0 auto 1rem;
+    box-shadow: 1px 1px 4px black;
+}
+
+.s-article h2 {
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: rgb(209, 203, 203);
+    text-shadow: 1px 1px 2px black;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: underline solid;
+}
+.s-article ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgb(240, 234, 234);
+    text-shadow: 1px 1px 2px black;
+    margin: 0 auto 0.5rem;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Footer styles */
+footer {
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(200, 200, 200);
+    margin-top: 2rem;
+}
+
+footer .hd-footer-logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: rgb(220, 220, 220);
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+/* Animating the background hair texture in the welcome banner */
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        left: auto;
+        transform: none;
+    }
+
+    .hamburger.active .bar {
+        background-color: black;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    /* Transform the first and third bars to create the "X" effect */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: none;
+        margin: 0;
+        padding: 60px 0 20px;
+    }
+
+    nav.active {
+        display: block;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    nav li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    section {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    .s-article > img {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
